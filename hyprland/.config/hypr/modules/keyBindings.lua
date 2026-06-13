@@ -3,7 +3,7 @@
 ---------------------
 
 local terminal    = "kitty"
-local fileManager = "dolphin"
+local fileManager = "thunar"
 local menu        = "wofi --show drun"
 
 ---------------------
@@ -22,10 +22,17 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("Telegram"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("discord"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("grim && notify-send 'Screenshot Captured'"))
+hl.bind("PRINT", hl.dsp.exec_cmd('grim -g "$(slurp)" && notify-send "Screenshot Captured"'))
+
+-- Change wallpaper using awww
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd('awww img "$(find ~/.config/wallpapers/ -type f | shuf -n 1)" --transition-type random'))
+-- hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("awww img \$(find ~/.config/wallpapers/ -type f | shuf -n 1) --transition-type random"))
+
 
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+-- hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
