@@ -1,19 +1,17 @@
 return {
     {
         'saghen/blink.cmp',
-        dependencies = {
-            'saghen/blink.lib',
-            'L3MON4D3/LuaSnip',
-            'rafamadriz/friendly-snippets'
-        },
+        dependencies = { 'saghen/blink.lib', 'L3MON4D3/LuaSnip', 'rafamadriz/friendly-snippets' },
         build = function()
             require("blink.cmp").build():pwait()
         end,
+
+
         opts = {
             keymap = { preset = 'default' },
             completion = { documentation = { auto_show = false } },
             sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
-            fuzzy = { implementation = "rust" }
+            fuzzy = { implementation = "lua" }
         },
         config = function(_, opts)
             require("blink.cmp").setup(opts)
