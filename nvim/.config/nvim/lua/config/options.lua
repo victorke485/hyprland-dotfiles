@@ -2,6 +2,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Line wrap
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+
 -- Use nerd font
 vim.g.have_nerd_font = true
 
@@ -65,6 +70,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
     callback = function() vim.hl.on_yank() end,
 })
+
+-- Indentation
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
+vim.opt.smartindent = true
 
 -- Diagnostic Config & Keymaps
 vim.diagnostic.config {

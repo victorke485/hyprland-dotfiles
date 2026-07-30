@@ -1,23 +1,22 @@
 return {
-    {
-        'saghen/blink.cmp',
-        dependencies = { 'saghen/blink.lib', 'L3MON4D3/LuaSnip', 'rafamadriz/friendly-snippets' },
-        build = function()
-            require("blink.cmp").build():pwait()
-        end,
+	{
+		"saghen/blink.cmp",
+		dependencies = { "saghen/blink.lib", "L3MON4D3/LuaSnip", "rafamadriz/friendly-snippets" },
+		build = function()
+			require("blink.cmp").build():pwait()
+		end,
 
-
-        opts = {
-            keymap = { preset = 'default' },
-            completion = { documentation = { auto_show = false } },
-            sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
-            fuzzy = { implementation = "lua" }
-        },
-        config = function(_, opts)
-            require("blink.cmp").setup(opts)
-            require("luasnip.loaders.from_vscode").lazy_load()
-        end
-    }
+		opts = {
+			keymap = { preset = "default" },
+			completion = { documentation = { auto_show = false } },
+			sources = { default = { "lsp", "path", "snippets", "buffer" } },
+			fuzzy = { implementation = "lua" },
+		},
+		config = function(_, opts)
+			require("blink.cmp").setup(opts)
+			require("luasnip.loaders.from_vscode").lazy_load()
+		end,
+	},
 }
 -- Default keymaps:
 -- 'super-tab' for mappings similar to vscode (tab to accept)
