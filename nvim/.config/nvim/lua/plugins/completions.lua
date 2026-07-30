@@ -1,14 +1,15 @@
 return {
 	{
 		"saghen/blink.cmp",
+		event = { "InsertEnter", "CmdwinEnter" },
 		dependencies = { "saghen/blink.lib", "L3MON4D3/LuaSnip", "rafamadriz/friendly-snippets" },
 		build = function()
 			require("blink.cmp").build():pwait()
 		end,
 
 		opts = {
-			keymap = { preset = "default" },
-			completion = { documentation = { auto_show = false } },
+			keymap = { preset = "super-tab" },
+			completion = { documentation = { auto_show = true } },
 			sources = { default = { "lsp", "path", "snippets", "buffer" } },
 			fuzzy = { implementation = "lua" },
 		},

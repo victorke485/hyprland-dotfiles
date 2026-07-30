@@ -6,7 +6,6 @@ return {
 		opts = {
 			indent = { enable = true },
 			highlight = { enable = true },
-			folds = { enable = true },
 			ensure_installed = {
 				"bash",
 				"c",
@@ -31,7 +30,6 @@ return {
 				"vimdoc",
 				"xml",
 				"yaml",
-
 				"cpp",
 				"css",
 				"scss",
@@ -41,11 +39,11 @@ return {
 				"git_config",
 				"gitcommit",
 				"gitignore",
-				"hyprlang",
 				"ini",
 				"ninja",
 				"sql",
 			},
+			auto_install = true,
 		},
 	},
 }
